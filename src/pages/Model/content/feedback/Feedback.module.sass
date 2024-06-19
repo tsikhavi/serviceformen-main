@@ -1,0 +1,240 @@
+$card-color: #FFFFFF
+$background-color: #E1E2E7
+$action-color: #98042D
+$text-color: #1B1B1B
+$avaliable-color: #049898
+$money-color: #D16161
+$accepts-color: #007ecc
+
+.feedbacks
+    display: flex
+    flex-direction: column
+    gap: 20px
+    width: 100%
+
+    .feedbacks_wrapper
+        gap: 25px
+        display: flex
+        flex-direction: column
+        background-color: $card-color
+        box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.25)
+        padding: 20px
+        border-radius: 5px
+
+        .feedbacks_info
+            display: flex
+            flex-direction: column
+            align-items: center
+            gap: 35px
+            padding: 25px
+
+            &.bordered
+                border-bottom: 1px solid $action-color
+
+            .feedbacks_rate
+                display: flex
+                flex-direction: column
+                align-items: center
+                gap: 15px
+
+                svg
+                    width: 40px
+                    height: 40px
+
+            form
+                display: flex
+                flex-direction: column
+                gap: 15px
+                align-items: start
+                width: 575px
+                height: 0px
+                max-height: 0px
+                overflow: hidden
+                font-size: 15px
+                transition: all .25s ease-out
+
+                &.active
+                    height: max-content
+                    max-height: 1000px
+                    padding: 5px
+
+                .input_field,
+                .textarea_field
+                    display: flex
+                    justify-content: space-between
+                    position: relative
+                    font-size: 15px
+                    width: 100%
+
+                    input,
+                    textarea
+                        width: calc(100% - 200px)
+                        background-color: $background-color
+                        box-shadow: none
+
+                    .label
+                        flex-shrink: 0
+
+                .input_field
+                    align-items: center
+
+                .textarea_field
+                    .label
+                        margin-top: 15px
+
+                .rate_field
+                    display: flex
+                    font-size: 15px
+                    width: 100%
+                    align-items: center
+
+                    .label
+                        width: 170px
+
+                    .rate
+                        display: flex
+                        align-items: center
+                        gap: 3px
+
+                        .rate_item
+                            cursor: pointer
+
+                            svg
+                                height: 25px
+                                width: 25px
+
+                .dropdown_button
+                    background-color: $background-color
+                    box-shadow: none
+
+                .dropdown_container
+                    background-color: $background-color
+                    box-shadow: none
+
+                .buttons
+                    margin-top: 45px
+                    display: flex
+                    justify-content: space-around
+                    width: 100%
+
+                    .cancel
+                        background-color: $card-color
+                        border: 1px solid $action-color
+                        color: $text-color
+
+                        &:hover
+                            background-color: $background-color
+
+        .feedbacks_list
+            display: flex
+            flex-direction: column
+            width: 100%
+
+@media (max-width: 1200px)
+    .feedbacks
+        gap: 15px
+
+        .feedbacks_wrapper
+            gap: 20px
+            padding: 15px
+
+            .feedbacks_info
+                gap: 30px
+                padding: 20px
+
+                .feedbacks_rate
+                    svg
+                        width: 35px
+                        height: 35px
+
+                form
+                    .input_field,
+                    .textarea_field
+                        font-weight: 500
+                        font-size: 14px
+                        gap: 10px
+
+                        input,
+                        textarea
+                            flex-grow: 1
+                            width: auto
+
+                        .label
+                            flex-shrink: 0
+                            width: 160px
+
+                    .input_field
+                        align-items: center
+
+                    .textarea_field
+                        .label
+                            margin-top: 15px
+
+                    .rate_field
+                        font-size: 14px
+
+                        .label
+                            width: 160px
+
+                        .rate
+                            display: flex
+                            align-items: center
+                            gap: 3px
+
+                            .rate_item
+                                cursor: pointer
+
+                                svg
+                                    height: 25px
+                                    width: 25px
+
+@media (max-width: 600px)
+    .feedbacks
+        gap: 10px
+
+        .feedbacks_wrapper
+            gap: 15px
+            padding: 0px
+
+            .feedbacks_info
+                gap: 25px
+                padding: 15px
+
+                .feedbacks_rate
+                    svg
+                        width: 25px
+                        height: 25px
+
+                form
+                    width: 100%
+
+                    .input_field,
+                    .textarea_field
+                        font-size: 12px
+
+                        input,
+                        textarea
+                            flex-grow: 1
+                            width: auto
+
+                        .label
+                            width: 25%
+
+                    .input_field
+                        align-items: center
+
+                    .textarea_field
+                        .label
+                            margin-top: 10px
+
+                    .rate_field
+                        font-size: 12px
+
+                        .label
+                            width: calc(25% + 10px)
+
+                        .rate
+                            .rate_item
+                                svg
+                                    height: 25px
+                                    width: 25px

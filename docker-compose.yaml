@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  db:
+    container_name: esco_db_${REACT_APP_SITE_NAME}
+    image: mysql:latest  # Use the official MySQL image
+    restart: always
+    environment:
+      MYSQL_USER: ${SQL_USER}  # Changed from MARIADB_USER to MYSQL_USER
+      MYSQL_ROOT_PASSWORD: ${SQL_PASSWORD}  # Changed from MARIADB_ROOT_PASSWORD to MYSQL_ROOT_PASSWORD
+      MYSQL_DATABASE: ${SQL_DB}  # Changed from MARIADB_DATABASE to MYSQL_DATABASE
+    volumes:
+      - ./schema.sql:/docker-entrypoint-initdb.d/schema.sql
+      - db_data:/var/lib/mysql
+    networks:
+      - app-network
+
+  app:
+    container_name: esco_app_${REACT_APP_SITE_NAME}
+    build: .
+    restart: always
+    environment:
+      NODE_ENV: production
+    ports:
+      - ${SITE_PORT}:8001
+    depends_on:
+      - db
+    networks:
+      - app-network
+    volumes:
+      - media_data:/app/uploads/media
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  db_data:
+  media_data:

@@ -1,0 +1,104 @@
+$card-color: #FFFFFF
+
+.search
+    width: 115px
+    position: relative
+    align-items: center
+    justify-content: center
+
+    .search_label
+        display: flex
+        align-items: center
+        gap: 10px
+        width: max-content
+
+        &::after
+            content: ""
+            position: absolute
+            background-color: $card-color
+            width: 0
+            height: 2px
+            left: 50%
+            bottom: -10px
+            transition: 0.25s all ease-out
+
+    .search_link
+        cursor: pointer
+
+    .search_input
+        top: -10px
+        width: 0px
+        position: absolute
+        z-index: 10
+        flex-shrink: 0
+        display: flex
+        gap: 10px
+        overflow: hidden
+        transition: 0.25s all ease-out
+        align-items: center
+
+        input
+            flex-grow: 1
+
+        .search_icon
+            position: absolute
+            top: 10px
+            right: 45px
+
+            svg
+                width: 25px
+                height: 25px
+
+        .close
+            cursor: pointer
+            display: flex
+            align-items: center
+            margin-top: 5px
+
+    &.active
+        .search_input
+            width: 350px
+
+@media (min-width: 1201px)
+    .search
+        .search_label
+            &:hover
+                &::after
+                    left: 0
+                    width: 90px
+
+@media (max-width: 1200px)
+    .search
+        width: 100px
+
+        .search_input
+            top: -5px
+
+        &.active
+            .search_input
+                .search_icon
+                    top: 5px
+
+                .close
+                    width: 30px
+                    height: 30px
+
+@media (max-width: 600px)
+    .search
+        width: 65px
+
+        &.active
+            .search_input
+                width: calc(100vw - 30px)
+
+                .search_icon
+                    right: 35px
+                    top: 7px
+
+                    svg
+                        width: 20px
+                        height: 20px
+
+                .close
+                    width: 20px
+                    height: 20px

@@ -1,0 +1,88 @@
+$action-color: #98042D
+$action-hover-color: #98042DD9
+
+.content
+    display: flex
+    flex-direction: column
+    align-items: center
+
+    .title
+        color: $action-color
+        font-weight: 500
+        font-size: 28px
+
+    form
+        display: flex
+        flex-direction: column
+        gap: 15px
+        align-items: center
+        margin-top: 50px
+        margin-bottom: 25px
+
+        input
+            width: 375px
+
+        button
+            margin-top: 45px
+
+        .error
+            color: $action-color
+            font-size: 15px
+
+    .forgot_password,
+    .register
+        cursor: pointer
+        font-weight: 500
+        color: $action-color
+        border-bottom: 1px solid $action-color
+        transition: .1s all ease-out
+
+    .forgot_password
+        align-self: end
+        margin-top: -5px
+        font-size: 15px
+
+    .register
+        align-self: center
+        font-size: 18px
+
+@media (min-width: 1201px)
+    .content
+        .forgot_password,
+        .register
+            &:hover
+                color: $action-hover-color
+
+@media (max-width: 1200px)
+    .content
+        .title
+            font-size: 24px
+
+        .forgot_password
+            font-size: 13px
+
+        .register
+            font-size: 14px
+
+        form
+            .error
+                font-size: 14px
+
+@media (max-width: 650px)
+    .content
+        width: 100%
+
+        .title
+            font-size: 18px
+
+        form
+            width: 100%
+
+            input
+                width: calc(100% - 20px)
+
+            .error
+                font-size: 12px
+
+        .forgot_password
+            font-size: 10px

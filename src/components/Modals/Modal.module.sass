@@ -1,0 +1,237 @@
+$background-color: #E1E2E7
+$card-color: #FFFFFF
+$action-color: #98042D
+$text-color: #1B1B1B
+
+.modal,
+.overlay
+    width: 100vw
+    top: 50%
+    left: 50%
+    right: 0
+    bottom: 0
+    position: fixed
+    z-index: 15
+
+.modal
+    height: 0
+    overflow: hidden
+
+    &.active
+        display: block
+        height: 100vh
+        top: 0
+        left: 0
+
+    .overlay
+        background: rgba(0, 0, 0, 0)
+        transition: all .15s ease-out
+        height: 0
+
+        &.active
+            background: rgba(0, 0, 0, 0.7)
+            height: 100vh
+            top: 0
+            left: 0
+
+    .modal_content
+        top: 50%
+        left: 50%
+        position: absolute
+        z-index: 15
+        background-color: $background-color
+        padding: 75px 150px
+        border-radius: 10px
+        transform: translate(-50%, -50%)
+        display: flex
+        flex-direction: column
+
+        .modal_start
+            margin: auto
+
+        .modal_close
+            position: absolute
+            top: 15px
+            right: 15px
+            width: 25px
+            height: 25px
+            cursor: pointer
+            z-index: 50
+
+        &.photo_crop
+            padding: 50px
+
+            .photo_crop_content
+                display: flex
+                align-items: center
+                flex-direction: column
+                gap: 25px
+
+        &.photos_viewer,
+        &.video_viewer
+            padding: 0px
+            background-color: transparent
+
+            .modal_close
+                top: 0
+                right: -35px
+
+        &.photos_viewer
+            .photos_viewer_container
+                display: flex
+                position: relative
+                flex-direction: column
+                gap: 15px
+                align-items: center
+
+                .slider,
+                img
+                    max-height: 85vh
+                    height: 85vh
+                    max-width: calc(100vw - 100px)
+                    border-radius: 10px
+
+                img
+                    width: auto
+
+                .button
+                    position: absolute
+                    z-index: 15
+                    top: 50%
+                    transform: translateY(-50%)
+                    color: $card-color
+                    cursor: pointer
+
+                    svg
+                        width: 35px
+                        height: 35px
+
+                    &.prev
+                        left: -45px
+
+                    &.next
+                        right: -45px
+
+                .count
+                    color: $card-color
+                    font-size: 15px
+
+        &.video_viewer
+            .video_viewer_container
+                background-color: $text-color
+                border-radius: 10px
+                overflow: hidden
+
+                .video_player
+                    height: 85vh
+                    width: 85vw
+
+    .modal_verification_content
+        display: flex
+        flex-direction: column
+        gap: 16px
+        
+        .verification_input
+            display: flex
+            flex-direction: row
+            justify-content: space-between
+            align-items: center
+
+            input
+                width: 100px
+
+    &.info
+        .modal_content
+            padding: 50px
+            max-height: 80vh
+            overflow: auto
+
+            .content
+                display: flex
+                flex-direction: column
+                align-items: center
+                gap: 35px
+
+                .message
+                    min-width: 200px
+                    font-size: 18px
+                    text-align: center
+                    line-height: 25px
+
+                .buttons
+                    display: flex
+                    flex-direction: column
+                    gap: 15px
+                    align-items: center
+
+                    .cancel
+                        background-color: $card-color
+                        border: 1px solid $action-color
+                        color: $text-color
+
+                        &:hover
+                            background-color: $background-color
+
+@media (max-width: 600px)
+    .modal
+        .modal_content
+            &.photo_crop
+                padding: 40px
+
+            &.video_viewer
+                .modal_close
+                    top: 5px
+                    right: 5px
+
+                .video_viewer_container
+                    background-color: $text-color
+                    border-radius: 10px
+                    overflow: hidden
+
+                    .video_player
+                        height: 85vh
+                        width: 85vw
+
+            &.photos_viewer
+                .modal_close
+                    top: 5px
+                    right: 5px
+
+                    svg
+                        *
+                            fill: $text-color
+                            stroke: $text-color
+
+                .photos_viewer_container
+                    .slider,
+                    img
+                        max-width: calc(100vw - 30px)
+                        max-height: calc(100vh - 50px)
+
+                    img
+                        height: auto
+                        width: auto
+
+                    .button
+                        svg
+                            width: 25px
+                            height: 25px
+
+                            *
+                                fill: $text-color
+
+                        &.prev
+                            left: 5px
+
+                        &.next
+                            right: 5px
+
+        &.info
+            .modal_content
+                padding: 25px
+                width: 85vw
+
+                .content
+                    .message
+                        margin-top: 25px
+                        font-size: 13px

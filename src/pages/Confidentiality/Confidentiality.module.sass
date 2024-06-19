@@ -1,0 +1,44 @@
+$action-color: #98042D
+$text-color: #1B1B1B
+
+.content
+    display: flex
+    flex-direction: column
+    padding: 30px
+    gap: 50px
+    flex-grow: 1
+
+    .title
+        color: $action-color
+        font-weight: 500
+        font-size: 28px
+
+    .description
+        font-size: 15px
+        color: $text-color
+        font-weight: 400
+
+@media (max-width: 1200px)
+    .content
+        gap: 30px
+        padding: 15px
+        align-items: center
+
+        .title
+            font-size: 22px
+
+        .description
+            font-size: 14px
+
+@media (max-width: 600px)
+    .content
+        gap: 30px
+        padding: 15px
+
+        .title
+            text-align: center
+            align-self: center
+            font-size: 15px
+
+        .description
+            font-size: 12px

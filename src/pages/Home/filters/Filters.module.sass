@@ -1,0 +1,190 @@
+$background-color: #E1E2E7
+$action-color: #98042D
+$card-color: #FFFFFF
+
+.filters_wrapper
+    width: 500px
+    display: flex
+    flex-direction: column
+    flex-shrink: 0
+    padding: 15px 25px
+    border-radius: 5px
+    background-color: $card-color
+    box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.25)
+    height: max-content
+
+    .filters_header
+        display: flex
+        align-items: center
+        gap: 10px
+        padding-bottom: 15px
+        border-bottom: 1px solid $background-color
+        position: relative
+
+        button
+            position: absolute
+            height: 35px
+            width: 150px
+            font-size: 15px
+            right: 0
+
+    .filters_group
+        display: flex
+        flex-direction: column
+
+        &.active
+            .group_name
+                color: $action-color
+                padding-bottom: 0
+
+                .group_count
+                    bottom: 0
+                    transform: translateY(0)
+
+            .filters_list
+                padding: 20px 0
+                height: max-content
+
+        .group_name
+            display: flex
+            align-items: center
+            justify-content: space-between
+            padding: 15px 0
+            font-size: 15px
+            font-weight: 400
+            border-top: 1px solid $background-color
+            position: relative
+
+            svg
+                width: 20px
+                height: 20px
+
+            .group_count
+                min-width: 14px
+                height: 14px
+                text-align: center
+                color: $card-color
+                font-size: 10px
+                padding: 3px
+                background-color: $action-color
+                position: absolute
+                right: 30px
+                border-radius: 50px
+                bottom: 50%
+                transform: translateY(50%)
+
+        .filters_list
+            display: flex
+            flex-wrap: wrap
+            gap: 15px
+            overflow: hidden
+            padding: 0
+            height: 0px
+            transition: all .2s ease-out
+
+            .filters_list
+                margin-bottom: -15px
+
+            .filter_item
+                width: calc(50% - 10px)
+
+                &.triple
+                    width: calc(33% - 10px)
+
+            .group_sub_name
+                display: flex
+                color: $action-color
+                font-size: 15px
+                font-weight: 400
+                width: 100%
+                margin-top: 5px
+
+            .slider_value
+                font-weight: 500
+                margin-top: 5px
+
+@media (max-width: 1200px)
+    .filters_wrapper
+        position: absolute
+        padding: 0 20px
+        z-index: 15
+        right: 15px
+        top: 65px
+        font-size: 14px
+        height: 0px
+        max-height: 0px
+        overflow: hidden
+
+        &.mobile
+            height: 0px
+            max-height: 0px
+
+        &.active
+            height: max-content
+            max-height: 1000vh
+
+            .filters_header
+                display: none
+
+            .filters_group
+                &.active
+                    .filters_list
+                        padding: 15px 0
+
+                    .group_name
+                        padding-bottom: 0
+
+            .filters_group
+                .group_name
+                    font-size: 14px
+                    padding: 10px 0
+
+                .filters_list
+                    .filters_list
+                        margin-bottom: -15px
+
+                .group_sub_name
+                    font-size: 14px
+
+            .close
+                border-top: 1px solid $background-color
+                display: flex
+                align-items: center
+                justify-content: center
+                height: 40px
+                gap: 10px
+                font-size: 14px
+
+                svg
+                    width: 20px
+                    height: 20px
+
+@media (max-width: 600px)
+    .filters_wrapper
+        &.active
+            left: 15px
+            right: 15px
+            width: auto
+            top: 55px
+
+            .filters_group
+                .group_name
+                    font-size: 10px
+
+                    svg
+                        width: 15px
+                        height: 15px
+
+                .group_sub_name
+                    font-size: 10px
+
+                .slider_value
+                    font-size: 10px
+
+            .close
+                font-size: 10px
+                gap: 5px
+
+                svg
+                    width: 18px
+                    height: 18px

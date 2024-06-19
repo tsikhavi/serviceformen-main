@@ -1,0 +1,360 @@
+$background-color: #E1E2E7
+$action-color: #98042D
+$action-hover-color: #98042DD9
+$text-color: #1B1B1B
+$card-color: #FFFFFF
+$vip-color: #8800AA
+$online-color: #00BD40
+
+.model
+    border-radius: 5px
+    background-color: $card-color
+    box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.25)
+    display: flex
+    position: relative
+    overflow: hidden
+
+    .verified
+        width: 35px
+        height: 35px
+        position: absolute
+        top: 5px
+        left: 5px
+
+        svg
+            width: 35px
+            height: 35px
+
+    .info
+        display: flex
+        flex-direction: column
+        padding: 10px
+
+        .main
+            display: flex
+            justify-content: space-between
+            align-items: center
+
+            .name
+                color: $action-color
+                font-size: 24px
+                font-weight: 500
+                cursor: pointer
+                text-decoration: none
+
+            .statuses
+                display: flex
+                gap: 10px
+                align-items: center
+
+                .vip
+                    border-radius: 5px
+                    padding: 2px 6px
+                    background-color: $vip-color
+                    color: $card-color
+                    font-size: 13px
+                    font-weight: 600
+
+                .online,
+                .offline
+                    height: 20px
+                    width: 20px
+                    border-radius: 20px
+
+                .online
+                    background-color: $online-color
+
+                .offline
+                    background-color: $background-color
+
+        .contacts
+            margin-top: 15px
+            display: flex
+            align-items: center
+            justify-content: space-between
+
+            .phone
+                display: flex
+                align-items: center
+                gap: 10px
+                font-size: 18px
+                color: $text-color
+                text-decoration: none
+                font-weight: 500
+
+                &.showed
+                    color: $action-color
+                    text-decoration: underline
+
+                .phone_icon
+                    height: 25px
+                    width: 25px
+
+                .phone_show
+                    margin-left: -5px
+                    height: 24px
+                    width: 43px
+                    cursor: pointer
+
+                    svg
+                        height: 100%
+                        width: 100%
+
+            .messengers
+                display: flex
+                align-items: center
+                gap: 10px
+
+                div
+                    height: 25px
+                    width: 25px
+
+                    svg
+                        height: 100%
+                        width: 100%
+
+        .location
+            display: flex
+            gap: 10px
+            margin-top: 15px
+            align-items: center
+            font-weight: 500
+
+        .parameters
+            display: flex
+            flex-wrap: wrap
+            margin-top: 15px
+            gap: 10px
+
+            .parameter
+                display: flex
+                gap: 15px
+                width: calc(50% - 10px)
+
+                .value
+                    font-weight: 500
+
+        .bottom_info
+            display: flex
+            justify-content: space-between
+            flex-grow: 1
+            align-items: center
+            height: max-content
+            margin-bottom: -15px
+
+            &.grid
+                margin-top: 15px
+
+            .photos_videos
+                display: flex
+                align-items: center
+                gap: 20px
+
+                .parameter
+                    display: flex
+                    align-items: center
+                    gap: 10px
+                    font-weight: 500
+
+            .services
+                display: flex
+                align-items: center
+                gap: 10px
+
+                div
+                    height: 25px
+                    width: 25px
+
+                    svg
+                        height: 100%
+                        width: 100%
+
+    &.list_model
+        width: calc(50% - 15px)
+        height: 250px
+
+        .info
+            padding: 10px 15px
+            width: 100%
+
+        .photo
+            height: 100%
+            width: auto
+            flex-shrink: 0
+            min-width: 25%
+            cursor: pointer
+
+    &.grid_model
+        width: calc(25% - 23px)
+        flex-direction: column
+        padding-bottom: 10px
+
+        .photo
+            width: 100%
+            height: auto
+            flex-shrink: 0
+            cursor: pointer
+
+@media (min-width: 1201px)
+    .model
+        .info
+            .main
+                .name
+                    &:hover
+                        color: $action-hover-color
+
+@media (max-width: 1650px)
+    .model
+        &.list_model
+            width: 100%
+
+    .model
+        &.grid_model
+            width: calc(33% - 18px)
+
+@media (max-width: 1400px)
+    .model
+        &.grid_model
+            width: calc(50% - 15px)
+
+@media (max-width: 1200px)
+    .model
+        .verified
+            width: 25px
+            height: 25px
+
+            svg
+                width: 25px
+                height: 25px
+
+        .info
+            .main
+                .name
+                    font-size: 18px
+
+                .statuses
+                    .vip
+                        font-size: 10px
+
+            .contacts
+                margin-top: 10px
+
+                .phone
+                    font-size: 14px
+
+                    .phone_icon
+                        width: 20px
+                        height: 20px
+
+                    .phone_show
+                        height: 20px
+                        width: 38px
+
+            .location
+                font-size: 14px
+
+            .parameters
+                font-size: 14px
+
+        &.list_model
+            height: 210px
+            width: calc(50% - 7.5px)
+
+        &.grid_model
+            gap: 0px
+            width: calc(25% - 11.5px)
+
+@media (max-width: 900px)
+    .model
+        &.list_model
+            width: 100%
+
+    .model
+        &.grid_model
+            width: calc(33.33333% - 10px)
+
+@media (max-width: 600px)
+    .model
+        .info
+            .main
+                .name
+                    font-size: 15px
+
+                .statuses
+                    gap: 5px
+
+                    .vip
+                        font-size: 8px
+                        border-radius: 3px
+                        padding: 2px 4px
+
+                    .online,
+                    .offline
+                        width: 15px
+                        height: 15px
+
+            .contacts
+                margin-top: 10px
+
+                .phone
+                    gap: 5px
+                    font-size: 10px
+
+                    .phone_icon
+                        width: 15px
+                        height: 15px
+
+                    .phone_show
+                        margin: 0
+                        height: 15px
+                        width: 28px
+
+                .messengers
+                    gap: 5px
+
+                    div
+                        width: 15px
+                        height: 15px
+
+            .location
+                font-size: 10px
+                gap: 5px
+                margin-top: 8px
+
+                svg
+                    width: 15px
+                    height: 15px
+
+            .parameters
+                margin-top: 10px
+                gap: 5px
+                font-size: 10px
+
+                .parameter
+                    gap: 5px
+
+            .bottom_info
+                margin-bottom: -5px
+
+                .photos_videos
+                    gap: 10px
+
+                    .parameter
+                        gap: 5px
+                        font-size: 10px
+
+                .services
+                    gap: 5px
+
+                    div
+                        width: 15px
+                        height: 15px
+
+        &.list_model
+            height: 150px
+
+            .info
+                padding: 10px
+
+        &.grid_model
+            width: calc(50% - 7.5px)

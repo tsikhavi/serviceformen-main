@@ -1,0 +1,632 @@
+$card-color: #FFFFFF
+$background-color: #E1E2E7
+$action-color: #98042D
+$vip-color: #8800AA
+$online-color: #00BD40
+$text-color: #1B1B1B
+$disabled-color: #8B8B8B
+$avaliable-color: #049898
+$money-color: #D16161
+
+.wrapper_content
+    display: flex
+    gap: 30px
+    padding: 30px
+    font-size: 18px
+    font-weight: 500
+
+    .media
+        width: 500px
+        display: flex
+        flex-direction: column
+        gap: 25px
+        position: relative
+        flex-shrink: 0
+        overflow: hidden
+
+        .slider
+            width: 100%
+            position: relative
+            display: flex
+            flex-direction: column
+            gap: 5px
+
+            .photo_verified
+                font-size: 15px
+                color: $disabled-color
+                font-weight: 400
+                margin-top: 5px
+                text-align: end
+
+            .photo_container
+                img
+                    width: 500px
+                    height: auto
+                    cursor: pointer
+                    border-radius: 5px
+
+            .action
+                position: absolute
+                top: 50%
+                transform: translateY(-50%)
+                color: $text-color
+                cursor: pointer
+                z-index: 5
+                background-color: $background-color
+                border-radius: 50px
+                height: 35px
+                width: 35px
+                display: flex
+                align-items: center
+                justify-content: center
+
+                svg
+                    width: 20px
+                    height: 20px
+
+                    *
+                        fill: $action-color
+
+                &.prev
+                    left: 10px
+
+                &.next
+                    right: 10px
+
+        .main_photo
+            width: 100%
+            border-radius: 5px
+            height: auto
+            cursor: pointer
+
+        .verified
+            position: absolute
+            width: 75px
+            height: 75px
+            top: 10px
+            left: 10px
+
+            svg
+                width: 100%
+                height: 100%
+
+        .media_content
+            font-size: 18px
+            font-weight: 500
+            gap: 15px
+            display: flex
+            flex-direction: column
+
+            .content
+                width: 100%
+                display: flex
+                overflow: auto
+                gap: 20px
+                flex-wrap: wrap
+
+                .content_item,
+                .more_content_item
+                    width: 110px
+                    height: auto
+                    border-radius: 5px
+                    position: relative
+                    cursor: pointer
+
+                .more_content
+                    position: absolute
+                    border-radius: 5px
+                    top: 0
+                    left: 0
+                    width: 100%
+                    height: 100%
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    text-align: center
+                    cursor: pointer
+                    font-weight: 400
+                    color: $card-color
+                    background-color: rgba(0, 0, 0, 0.75)
+
+                .content_item
+                    &.video
+                        width: 240px
+                        height: 150px
+                        background-color: $text-color
+
+    .info
+        display: flex
+        flex-direction: column
+        gap: 25px
+
+        .name
+            display: flex
+            font-size: 28px
+            font-weight: 500
+            color: $action-color
+            gap: 50px
+            align-items: center
+
+            .statuses
+                display: flex
+                align-items: center
+                gap: 15px
+
+                .vip,
+                .empty_vip
+                    border-radius: 5px
+                    padding: 4px 8px
+                    background-color: $vip-color
+                    color: $card-color
+                    font-size: 15px
+                    font-weight: 500
+
+                .empty_vip
+                    opacity: 0
+
+                .online,
+                .offline,
+                .empty_online
+                    height: 25px
+                    width: 25px
+                    border-radius: 25px
+
+                .online
+                    background-color: $online-color
+
+                .offline
+                    background-color: $disabled-color
+
+        .location
+            display: flex
+            gap: 10px
+            align-items: center
+
+            svg
+                height: 30px
+                width: 30px
+
+        .about_self
+            display: flex
+            gap: 20px
+
+            span
+                display: flex
+                margin-top: 10px
+                flex-shrink: 0
+
+            .about_self_content
+                display: flex
+                flex-grow: 1
+                padding: 10px 15px
+                border-radius: 5px
+                font-weight: 400
+                font-size: 15px
+                background-color: $card-color
+                box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.25)
+
+        .parts
+            display: flex
+            justify-content: space-between
+
+            .part
+                display: flex
+                flex-direction: column
+                gap: 15px
+                width: calc(50% - 15px)
+
+                &.full_width
+                    width: 100%
+
+                table
+                    padding: 15px 20px
+                    font-size: 18px
+
+            .content
+                display: flex
+                flex-direction: column
+                gap: 15px
+                padding: 15px 20px
+                border-radius: 5px
+                background-color: $card-color
+                box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.25)
+
+                .contacts
+                    display: flex
+                    align-items: center
+                    justify-content: space-between
+
+                    .phone
+                        display: flex
+                        align-items: center
+                        gap: 10px
+                        font-size: 18px
+                        font-weight: 500
+                        color: $text-color
+                        text-decoration: none
+
+                        .phone_icon
+                            height: 30px
+                            width: 30px
+
+                        .phone_show
+                            cursor: pointer
+                            color: $action-color
+
+                    .messengers
+                        display: flex
+                        align-items: center
+                        gap: 15px
+
+                        svg
+                            cursor: pointer
+                            width: 30px
+                            height: 30px
+
+                .parameters
+                    display: flex
+                    flex-wrap: wrap
+                    margin-top: 5px
+                    gap: 15px
+
+                    .parameter
+                        display: flex
+                        gap: 15px
+                        width: calc(50% - 10px)
+                        font-weight: 400
+
+                        .value
+                            font-weight: 500
+
+        .services
+            display: flex
+            flex-direction: column
+            gap: 20px
+            width: 100%
+
+            .services_wrapper
+                gap: 25px
+                display: flex
+                flex-direction: column
+                background-color: $card-color
+                box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.25)
+                padding: 20px
+                border-radius: 5px
+
+                .services_group
+                    display: flex
+                    flex-direction: column
+                    gap: 15px
+
+                    .group_name
+                        color: $action-color
+                        font-weight: 400
+
+                    .services_list
+                        display: flex
+                        flex-wrap: wrap
+                        width: 100%
+                        row-gap: 15px
+
+                        .service
+                            display: flex
+                            gap: 10px
+                            align-items: center
+                            width: 33%
+
+                            .service_item
+                                &.disabled
+                                    color: $disabled-color
+                                    text-decoration: line-through
+
+                            svg
+                                margin-right: 5px
+                                width: 25px
+                                height: 25px
+
+                            .avaliable,
+                            .for_money
+                                color: $card-color
+                                padding: 3px 6px
+                                border-radius: 5px
+                                font-size: 13px
+
+                            .avaliable
+                                background-color: $avaliable-color
+
+                            .for_money
+                                background-color: $money-color
+
+.previous_page_button
+    display: flex
+    align-items: center
+    width: 100%
+    height: 35px
+    background-color: $action-color
+    cursor: pointer
+    color: $card-color
+    font-weight: 500
+
+.moderator_control
+    position: fixed
+    right: 0
+    bottom: 0
+    padding: 10px
+    background-color: $card-color
+    border-radius: 5px
+    box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.25)
+    width: 300px
+
+    .toggle_wrapper
+        width: 100%
+        display: flex
+        justify-content: center
+        padding: 3px
+        border-radius: 5px
+        background-color: $background-color
+
+        .toggle
+            display: flex
+            justify-content: center
+            align-items: center
+            font-weight: 500
+            border-radius: 5px
+            height: 35px
+            cursor: pointer
+            width: 50%
+            transition: all 0.2s ease-out
+
+            &.active
+                background-color: $action-color
+                color: $card-color
+
+@media (max-width: 1450px)
+    .wrapper_content
+        padding: 15px
+        font-size: 16px
+        flex-direction: column
+
+        .media
+            gap: 15px
+            align-self: center
+
+            .slider
+                .photo_container
+                    .photo_verified
+                        font-size: 14px
+
+            .verified
+                height: 60px
+                width: 60px
+
+            .media_content
+                font-size: 14px
+
+        .info
+            gap: 20px
+
+            .name
+                font-size: 22px
+                gap: 0
+                justify-content: space-between
+
+                .empty
+                    width: 85px
+
+            .location
+                align-self: center
+
+                svg
+                    width: 25px
+                    height: 25px
+
+            .about_self
+                .about_self_content
+                    width: auto
+                    flex-grow: 1
+
+            .parts
+                flex-direction: column
+                gap: 20px
+
+                .part
+                    width: 100%
+
+                    table
+                        padding: 10px 15px
+                        font-size: 16px
+
+                .content
+                    padding: 10px 15px
+                    gap: 10px
+
+                    .contacts
+                        .phone
+                            gap: 10px
+                            font-size: 16px
+
+                            .phone_icon
+                                height: 25px
+                                width: 25px
+
+                        .messengers
+                            svg
+                                width: 25px
+                                height: 25px
+
+                    .parameters
+                        gap: 10px
+
+                        .parameter
+                            gap: 10px
+
+            .services
+                gap: 15px
+
+                .services_wrapper
+                    gap: 20px
+                    padding: 15px
+
+                    .services_group
+                        gap: 10px
+
+                        .group_name
+                            font-size: 14px
+
+                        .services_list
+                            row-gap: 10px
+                            column-gap: 20px
+
+                            .service
+                                gap: 10px
+                                width: calc(50% - 10px)
+                                font-size: 14px
+
+                                svg
+                                    width: 20px
+                                    height: 20px
+
+                                .avaliable,
+                                .for_money
+                                    border-radius: 3px
+                                    font-size: 11px
+
+@media (max-width: 600px)
+    .wrapper_content
+        font-size: 12px
+
+        .media
+            width: 100%
+
+            .slider
+                .photo_container
+                    img
+                        width: 100%
+
+                    .photo_verified
+                        font-size: 14px
+
+                .action
+                    width: 30px
+                    height: 30px
+
+                    svg
+                        width: 15px
+                        height: 15px
+
+            .verified
+                height: 45px
+                width: 45px
+
+            .media_content
+                gap: 10px
+                font-size: 12px
+
+                .content
+                    gap: 10px
+
+                    .content_item,
+                    .more_content_item
+                        width: calc(25% - 8px)
+
+                    .more_content_item
+                        .content_item
+                            width: 100%
+
+                    .content_item
+                        &.video
+                            width: calc(50% - 2.5px)
+                            height: calc(100vw / 3)
+
+        .info
+            gap: 15px
+
+            .name
+                font-size: 18px
+                .empty
+                    width: 50px
+
+                .statuses
+                    gap: 10px
+
+                    .vip
+                        font-size: 10px
+
+                    .online,
+                    .offline
+                        height: 20px
+                        width: 20px
+
+            .location
+                gap: 5px
+
+                svg
+                    width: 20px
+                    height: 20px
+
+            .about_self
+                flex-direction: column
+                gap: 10px
+
+                .about_self_content
+                    font-size: 10px
+
+            .parts
+                flex-direction: column
+                gap: 15px
+
+                .part
+                    width: 100%
+
+                    table
+                        padding: 10px
+                        font-size: 12px
+
+                .content
+                    padding: 10px
+                    gap: 5px
+
+                    .contacts
+                        .phone
+                            gap: 5px
+                            font-size: 12px
+
+                            .phone_icon
+                                height: 20px
+                                width: 20px
+
+                        .messengers
+                            svg
+                                width: 20px
+                                height: 20px
+
+                    .parameters
+                        gap: 5px
+
+                        .parameter
+                            font-size: 11px
+                            gap: 2px
+
+            .services
+                gap: 10px
+
+                .services_wrapper
+                    gap: 15px
+                    padding: 10px 15px
+
+                    .services_group
+                        gap: 5x
+
+                        .group_name
+                            font-size: 12px
+
+                        .services_list
+                            gap: 5px
+
+                            .service
+                                width: 100%
+                                font-size: 12px
+
+                                .avaliable,
+                                .for_money
+                                    font-size: 8px

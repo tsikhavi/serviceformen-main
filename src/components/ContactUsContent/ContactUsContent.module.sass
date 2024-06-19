@@ -1,0 +1,91 @@
+$action-color: #98042D
+
+.content
+    display: flex
+    flex-direction: column
+    align-items: center
+
+    .title
+        color: $action-color
+        font-weight: 500
+        font-size: 28px
+
+    form
+        display: flex
+        flex-direction: column
+        gap: 15px
+        align-items: start
+        width: 550px
+        margin-top: 50px
+
+        .input_field,
+        .textarea_field
+            display: flex
+            justify-content: space-between
+            position: relative
+            font-size: 15px
+            width: 100%
+
+            input,
+            textarea
+                width: calc(100% - 200px)
+
+        .input_field
+            align-items: center
+
+        .textarea_field
+            .label
+                margin-top: 15px
+
+        button
+            margin-top: 45px
+            align-self: center
+
+    .success_content
+        display: flex
+        flex-direction: column
+        text-align: center
+        gap: 25px
+        font-size: 18px
+        width: 475px
+        font-weight: 500
+        margin-top: 50px
+
+        .success_title
+            color: $action-color
+
+        .success_description
+            width: 100%
+
+@media (max-width: 1200px)
+    .content
+        .title
+            font-size: 24px
+
+        form
+            .input_field,
+            .textarea_field
+                font-weight: 500
+                font-size: 14px
+
+@media (max-width: 650px)
+    .content
+        width: 100%
+
+        .title
+            font-size: 18px
+
+        form
+            width: 100%
+
+            .input_field,
+            .textarea_field
+                font-size: 12px
+
+                input,
+                textarea
+                    width: calc(100% - 175px)                    
+
+    .success_content
+        width: 100%
+        font-size: 15px

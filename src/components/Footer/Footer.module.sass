@@ -1,0 +1,125 @@
+$background-color: #E1E2E7
+$background-hover-color: #E1E2E7D9
+$action-color: #98042D
+$text-color: #1B1B1B
+$card-color: #FFFFFF
+
+footer
+    padding: 30px
+    background-color: $text-color
+    font-size: 15px
+    display: flex
+    flex-direction: column
+    color: $card-color
+
+    .navigation_wrapper
+        display: flex
+        gap: 50px
+        align-items: center
+
+        img
+            width: 200px
+            height: auto
+
+        .navigation
+            display: flex
+            justify-content: space-between
+            flex-wrap: wrap
+            row-gap: 25px
+            list-style: none
+            flex-grow: 1
+            height: max-content
+
+            li,
+            a
+                text-decoration: none
+                font-size: 15px
+                cursor: default
+                width: 22%
+                text-align: center
+                color: $card-color
+
+                .item
+                    color: $card-color
+                    text-align: center
+                    cursor: pointer
+                    transition: all .25s ease-out
+                    word-wrap: break-word
+
+    .bottom_content
+        margin-top: 50px
+        display: flex
+        justify-content: space-between
+        gap: 50px
+        align-items: center
+        font-weight: 300
+
+        .copyright
+            width: 200px
+            font-size: 12px
+            flex-shrink: 0
+
+        .warning_info
+            font-size: 11px
+            flex-grow: 1
+
+@media (min-width: 1201px)
+    footer
+        .navigation_wrapper
+            .navigation
+                li,
+                a
+                    .item
+                        &:hover
+                            color: $action-color
+
+@media (max-width: 1200px)
+    footer
+        font-size: 14px
+
+        .navigation_wrapper
+            gap: 30px
+
+            img
+                width: 150px
+
+            .navigation
+                a,
+                li
+                    width: 47%
+                    font-size: 14px
+
+        .bottom_content
+            gap: 30px
+
+            .copyright
+                width: 150px
+                font-size: 11px
+
+            .warning_info
+                font-size: 10px
+
+@media (max-width: 600px)
+    footer
+        font-size: 12px
+
+        .navigation_wrapper
+            flex-direction: column
+            gap: 15px
+
+            .navigation
+                a,
+                li
+                    width: 49%
+                    font-size: 12px
+
+        .bottom_content
+            flex-direction: column
+
+            .copyright
+                width: 100%
+                text-align: center
+                font-size: 10px
+
+            .warning_info
+                font-size: 10px

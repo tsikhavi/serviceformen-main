@@ -1,0 +1,185 @@
+$card-color: #FFFFFF
+$action-color: #98042D
+$text-color: #1B1B1B
+
+.info
+    display: flex
+    flex-direction: column
+    gap: 15px
+    font-size: 15px
+    white-space: pre-wrap
+
+    .info_item
+        display: flex
+
+        span
+            color: $action-color
+
+.videos_container
+    display: flex
+    flex-direction: column
+    gap: 30px
+
+    button
+        width: 325px
+
+    .videos_wrapper
+        display: flex
+        flex-wrap: wrap
+        gap: 25px
+
+        .video_item
+            display: flex
+            height: auto
+            width: calc(50% - 15px)
+            border-radius: 5px
+            position: relative
+            overflow: hidden
+
+            &.on_check,
+            &.rejected
+                background: $text-color
+                padding-bottom: 60px
+
+                .check_video,
+                .rejected_video
+                    position: absolute
+                    z-index: 5
+                    width: 100%
+                    height: calc(100% - 15px)
+                    background: $text-color
+                    background: linear-gradient(0deg, $text-color 0%, #1B1B1Be6 15%, #1b1b1b66 100%)
+                    display: flex
+                    align-items: end
+                    justify-content: center
+                    color: $card-color
+                    font-weight: 500
+                    font-size: 18px
+                    padding-bottom: 15px
+
+                .rejected_video
+                    background: linear-gradient(0deg, $action-color 0%, #98042De6 15%, #98042D66 100%)
+
+                video
+                    height: calc((100vw - 410px - 60px) / 2 / 1.6)
+
+            video
+                height: calc((100vw - 410px - 60px) / 2 / 1.6 + 60px)
+                display: flex
+                width: 100%
+                border-radius: 5px
+                background-color: $text-color
+
+            .delete_button
+                position: absolute
+                z-index: 5
+                right: 10px
+                top: 10px
+                height: 35px
+                width: 35px
+
+                svg
+                    width: 20px
+                    height: 20px
+
+        .add
+            background-color: $card-color
+            display: flex
+            flex-direction: column
+            width: calc(50% - 15px)
+            height: calc((100vw - 410px - 60px) / 2 / 1.6 + 60px)
+            border-radius: 5px
+            gap: 25px
+            box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.25)
+            align-items: center
+            justify-content: center
+            cursor: pointer
+            align-self: center
+
+            svg
+                width: 85px
+                height: 85px
+
+@media (max-width: 1200px)
+    .info
+        font-size: 14px
+
+    .videos_container
+        button
+            width: 225px
+            align-self: center
+
+        .videos_wrapper
+            gap: 15px
+
+            .video_item
+                width: calc(33% - 10px)
+
+                &.on_check,
+                &.rejected
+                    .check_video,
+                    .rejected_video
+                        font-size: 14px
+
+            .add
+                width: calc(33% - 10px)
+                font-size: 14px
+                gap: 10px
+
+                svg
+                    width: 60px
+                    height: 60px
+
+@media (max-width: 850px)
+    .videos_container
+        .videos_wrapper
+            .video_item
+                width: calc(50% - 10px)
+
+                &.on_check,
+                &.rejected
+                    padding-bottom: 40px
+
+                    video
+                        height: calc((100vw - 250px) / 2 / 1.6)
+
+                video
+                    height: calc((100vw - 250px) / 2 / 1.6 + 40px)
+
+            .add
+                width: calc(50% - 10px)
+                height: calc((100vw - 250px) / 2 / 1.6 + 40px)
+
+@media (max-width: 600px)
+    .info
+        font-size: 12px
+
+    .videos_container
+        .videos_wrapper
+            .video_item
+                &.on_check,
+                &.rejected
+                    .check_video,
+                    .rejected_video
+                        font-size: 12px
+
+            .add
+                font-size: 12px
+
+@media (max-width: 525px)
+    .videos_container
+        .videos_wrapper
+            .video_item
+                width: 100%
+
+                &.on_check,
+                &.rejected
+                    video
+                        height: calc((100vw - 100px) / 1.6)
+
+                video
+                    height: calc((100vw - 100px) / 1.6 + 40px)
+
+            .add
+                width: 100%
+                height: calc((100vw - 100px) / 1.6 + 40px)

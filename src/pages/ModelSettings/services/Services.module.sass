@@ -1,0 +1,105 @@
+$action-color: #98042D
+
+.info
+    font-size: 15px
+
+    span
+        color: $action-color
+
+.services_container
+    display: flex
+    flex-direction: column
+    gap: 40px
+    margin-top: 15px
+
+    .services_group
+        display: flex
+        flex-direction: column
+        gap: 20px
+
+        .services_category
+            color: $action-color
+            font-size: 18px
+
+        .services_list
+            display: flex
+            width: 100%
+            column-gap: 3.33%
+            row-gap: 15px
+            flex-wrap: wrap
+
+            .service
+                display: flex
+                width: 30%
+                justify-content: space-between
+                align-items: center
+                flex-shrink: 0
+                height: 45px
+
+                .check_part,
+                .input_part
+                    display: flex
+                    align-items: center
+                    gap: 10px
+                    flex-shrink: 0
+
+                .check_part
+                    width: 60%
+
+                .input_part
+                    width: 40%
+
+                    input
+                        width: calc(100% - 60px)
+
+                    .currency
+                        display: flex
+                        flex-shrink: 0
+
+
+@media (max-width: 1750px)  
+    .services_container
+        .services_group
+            .services_list
+                column-gap: 6%
+
+                .service
+                    width: 47%
+
+                    .check_part,
+                    .input_part
+                        width: 50%
+                    
+@media (max-width: 1200px) 
+    .info
+        font-size: 14px
+        
+    .services_container
+        .services_group
+            .services_category
+                font-size: 14px
+
+            .services_list
+                row-gap: 10px
+
+                .service
+                    width: 47%
+
+@media (max-width: 600px) 
+    .info
+        font-size: 12px
+                    
+    .services_container
+        .services_group
+            .services_category
+                font-size: 12px
+
+            .services_list
+                .service
+                    width: 100%
+
+                    .check_part
+                        width: 30%
+
+                    .input_part
+                        width: 70%

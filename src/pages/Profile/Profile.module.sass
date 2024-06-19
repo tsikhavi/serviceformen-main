@@ -1,0 +1,293 @@
+$background-color: #E1E2E7
+$action-color: #98042D
+$text-color: #1B1B1B
+$card-color: #FFFFFF
+
+svg
+    height: 25px
+    width: 25px
+
+.wrapper_content
+    display: flex
+    gap: 30px
+    font-size: 15px
+    color: $text-color
+    font-weight: 400
+    flex-grow: 1
+
+    .content
+        display: flex
+        flex-direction: column
+        padding: 30px
+        gap: 50px
+        width: 100%
+
+        .content
+            padding: 0
+
+        .title
+            color: $action-color
+            font-weight: 500
+            font-size: 28px
+
+        .main_info
+            display: flex
+            flex-direction: column
+            gap: 15px
+            font-size: 15px
+            width: auto
+            min-width: 570px
+
+            &.full_width
+                width: 100%
+                gap: 20px
+
+            .main_info
+                margin-top: 10px
+
+            .item
+                display: flex
+                gap: 25px
+                align-items: center
+
+                .label
+                    width: 150px
+
+                .value
+                    color: $action-color
+                    font-weight: 500
+                    user-select: text
+
+                .balance_button
+                    width: 125px
+                    height: 35px
+                    font-size: 15px
+
+            .notification
+                display: flex
+                align-items: center
+                gap: 10px
+                color: $text-color
+                font-size: 15px
+                font-weight: 500
+                word-wrap: break-word
+
+                .checkbox
+                    height: 25px
+                    width: 25px
+                    background: $card-color
+                    border: 1px $card-color solid
+                    border-radius: 3px
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    flex-shrink: 0
+                    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25)
+
+                    svg
+                        height: 21px
+                        width: 21px
+
+            form
+                display: flex
+                flex-direction: column
+                gap: 15px
+                align-items: start
+                width: 550px
+
+                .input_field,
+                .textarea_field
+                    display: flex
+                    justify-content: space-between
+                    position: relative
+                    font-size: 15px
+                    width: 100%
+
+                    input,
+                    textarea
+                        width: calc(100% - 200px)
+
+                    .label
+                        flex-shrink: 0
+
+                .input_field
+                    align-items: center
+
+                .textarea_field
+                    .label
+                        margin-top: 15px
+
+                .error
+                    color: $action-color
+                    margin-top: 15px
+
+                button
+                    margin-top: 45px
+
+            .agency
+                font-weight: 500
+                font-size: 18px
+
+            .search
+                width: calc(50% - 30px)
+                position: relative
+
+                input
+                    width: calc(100% - 30px)
+
+                .search_icon
+                    position: absolute
+                    top: 10px
+                    right: 15px
+
+                    svg
+                        width: 25px
+                        height: 25px
+
+        button
+            width: 325px
+
+        .models_wrapper
+            display: flex
+            gap: 50px
+            flex-wrap: wrap
+
+@media (max-width: 1450px)
+    .wrapper_content
+        .content
+            .main_info
+                .search
+                    width: 100%
+
+@media (max-width: 1200px)
+    .wrapper_content
+        overflow: auto
+        flex-direction: column
+        gap: 0px
+        padding-bottom: 25px
+
+        .content
+            width: auto
+            padding: 0 15px
+            gap: 30px
+
+            .title
+                text-align: center
+                align-self: center
+                font-size: 22px
+
+            .main_info
+                &.full_width
+                    gap: 10px
+
+                .agency
+                    font-size: 14px
+
+                .item
+                    .label
+                        width: 125px
+
+                    .balance_button
+                        height: 30px
+                        font-size: 13px
+                        width: 100px
+
+                .notification
+                    gap: 5px
+                    font-size: 14px
+
+                    .checkbox
+                        height: 20px
+                        width: 20px
+
+                        svg
+                            height: 16px
+                            width: 16px
+
+                form
+                    align-self: center
+
+                    .input_field,
+                    .textarea_field
+                        font-weight: 500
+                        font-size: 14px
+                        gap: 10px
+
+                        .label
+                            width: 160px
+
+                        input,
+                        textarea
+                            flex-grow: 1
+                            width: auto
+
+                    button
+                        align-self: center
+
+                .search
+                    width: calc(50% - 20px)
+
+                    .search_icon
+                        top: 5px
+
+            button
+                width: 225px
+                align-self: center
+
+@media (max-width: 900px)
+    .wrapper_content
+        .content
+            .main_info
+                .search
+                    width: 100%
+
+@media (max-width: 600px)
+    .wrapper_content
+        .content
+            .title
+                font-size: 15px
+
+            .main_info
+                width: 100%
+                font-size: 12px
+                min-width: 100px
+
+                .agency
+                    font-size: 12px
+
+                .item
+                    gap: 15px
+
+                    .label
+                        width: 85px
+                        flex-shrink: 0
+
+                    .balance_button
+                        width: auto
+                        flex-grow: 1
+                        max-width: 100px
+
+                .notification
+                    font-size: 12px
+
+                form
+                    width: 100%
+
+                    .input_field,
+                    .textarea_field
+                        font-size: 12px
+
+                        .label
+                            width: 25%
+
+                .search
+
+                    input
+                        width: calc(100% - 20px)
+
+                    .search_icon
+                        right: 10px
+
+                        svg
+                            height: 15px
+                            width: 15px

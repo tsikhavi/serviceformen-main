@@ -1,0 +1,110 @@
+$background-color: #E1E2E7
+$action-color: #98042D
+$text-color: #1B1B1B
+$card-color: #FFFFFF
+
+svg,
+img
+    height: 25px
+    width: 25px
+
+.language_selector
+    position: relative
+
+.language
+    display: flex
+    align-items: center
+    gap: 10px
+    padding: 10px
+    cursor: pointer
+    overflow: hidden
+    border-radius: 5px
+    border: 0.5px solid $card-color
+
+.languages_list
+    position: absolute
+    z-index: 10
+    background-color: $card-color
+    display: flex
+    flex-direction: column
+    border-radius: 5px
+    box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.25)
+    color: $text-color
+    right: 0px
+    top: 80px
+    max-height: 0px
+    width: 180px
+    transition: all .25s ease-out
+    overflow: hidden
+
+    &.active
+        max-height: 500px
+
+    .languages_title
+        color: $action-color
+        font-weight: 400
+        padding: 15px
+        padding-bottom: 10px
+
+    .language
+        padding: 8px 13px
+        display: flex
+        align-items: center
+        gap: 10px
+        cursor: pointer
+        border-radius: 5px
+        margin: 0px 5px
+
+        svg,
+        img
+            width: 20px
+            height: 20px
+
+@media (min-width: 1201px)
+    .languages_list
+        .language
+            &:hover
+                background-color: $background-color
+
+@media (max-width: 1200px)
+    .language
+        padding: 5px 10px
+
+        svg,
+        img
+            width: 20px
+            height: 20px
+
+    .languages_list
+        width: 125px
+        top: 51px
+
+        .languages_title
+            padding: 10px 15px
+
+        .language
+            padding: 6px 10px
+
+            svg,
+            img
+                width: 20px
+                height: 20px
+
+@media (max-width: 600px)
+    .language
+        padding: 5px
+        gap: 5px
+
+        svg,
+        img
+            width: 15px
+            height: 15px
+
+    .languages_list
+        width: 100px
+
+        .languages_title
+            padding: 10px 15px 5px 15px
+
+        .language
+            padding: 3px 10px

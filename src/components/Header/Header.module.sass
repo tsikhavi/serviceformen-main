@@ -1,0 +1,248 @@
+$background-color: #E1E2E7
+$background-hover-color: #E1E2E7D9
+$action-color: #98042D
+$text-color: #1B1B1B
+$card-color: #FFFFFF
+
+svg,
+img
+    height: 25px
+    width: 25px
+
+header
+    display: flex
+    flex-direction: column
+    position: relative
+
+    .main_navigation,
+    .sub_navigation
+        height: 60px
+        background-color: $action-color
+        color: $card-color
+        display: flex
+        align-items: center
+        justify-content: space-between
+        padding: 0 30px
+        font-weight: 500
+        font-size: 15px
+
+    .main_navigation
+        .logo
+            width: 195px
+            flex-shrink: 0
+
+            img
+                height: 50px
+                width: auto
+
+        .menu_button
+            width: 150px
+            display: flex
+            align-items: center
+            gap: 10px
+
+        .navigation,
+        .navigation_mobile
+            list-style: none
+            display: flex
+            gap: 40px
+
+            li
+                cursor: pointer
+
+            a
+                text-decoration: none
+                color: $card-color
+                font-size: 15px
+
+            li,
+            a
+                position: relative
+                padding: 0 5px
+                transition: 0.25s all ease-out
+                width: max-content
+
+                &::after
+                    content: ""
+                    position: absolute
+                    background-color: $card-color
+                    width: 0
+                    height: 2px
+                    left: 50%
+                    bottom: -10px
+                    transition: 0.25s all ease-out
+
+                &.active
+                    &::after
+                        left: 0
+                        width: 100%
+
+        .navigation_mobile
+            position: fixed
+            z-index: 50
+            top: 45px
+            left: 0
+            width: 100%
+            background-color: $background-color
+            flex-direction: column
+            gap: 20px
+            font-size: 14px
+            align-items: center
+            justify-content: center
+            height: 0px
+            overflow: hidden
+            transition: 0.25s all ease-out
+
+            &.active
+                height: calc(100vh - 45px)
+
+            li,
+            a
+                color: $text-color
+                width: max-content
+
+                &::after
+                    background-color: $text-color
+                    bottom: -5px
+
+            img
+                margin-top: 15%
+                width: auto
+                height: 70px
+
+        .user
+            width: 195px
+            display: flex
+            justify-content: end
+            align-items: center
+            gap: 10px
+
+            .user_name
+                cursor: pointer
+
+            .logout
+                width: 35px
+                height: 35px
+                background-color: $background-color
+                margin-left: 5px
+                flex-shrink: 0
+
+                svg
+                    width: 25px
+                    height: 25px
+
+    .sub_navigation
+        background-color: $text-color
+
+    .location_navigation
+        height: 50px
+        display: flex
+        align-items: end
+        justify-content: center
+
+        .selected_location
+            display: flex
+            gap: 10px
+            align-items: center
+
+            .close
+                margin-left: 5px
+                cursor: pointer
+                height: 20px
+                width: 20px
+
+                svg
+                    height: 20px
+                    width: 20px
+
+@media (min-width: 1201px)
+    header
+        .main_navigation
+            .navigation
+                li,
+                a
+                    &:hover
+                        &::after
+                            left: 0
+                            width: 100%
+
+            .user
+                .logout
+                    &:hover
+                        background-color: $background-hover-color
+
+@media (max-width: 1500px)
+    header
+        .main_navigation
+            .navigation
+                gap: 30px
+
+@media (max-width: 1200px)
+    header
+        .main_navigation,
+        .sub_navigation
+            height: 45px
+            font-size: 12px
+            padding: 0 15px
+
+        .main_navigation
+            svg
+                width: 20px
+                height: 20px
+
+            .logo
+                display: flex
+                justify-content: center
+
+@media (max-width: 600px)
+    header
+        .main_navigation,
+        .sub_navigation
+            font-size: 10px
+
+        .main_navigation
+            .logo
+                display: none
+
+                img
+                    height: 40px
+                    width: auto
+
+            .navigation_mobile
+                gap: 15px
+                font-size: 12px
+
+                a
+                    font-size: 12px
+
+                a,
+                li
+                    &::after
+                        height: 1px
+
+            .user
+                gap: 5px
+
+                .logout
+                    height: 30px
+                    width: 30px
+
+                    svg
+                        width: 20px
+                        height: 20px
+
+        .location_navigation
+            height: 35px
+            font-size: 10px
+            font-weight: 500
+
+            svg
+                width: 20px
+                height: 20px
+
+            .selected_location
+                gap: 5px
+
+                .close
+                    width: 15px
+                    height: 15px

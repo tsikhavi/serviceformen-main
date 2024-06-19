@@ -1,0 +1,39 @@
+$card-color: #FFFFFF
+$background-color: #E1E2E7
+$action-color: #98042D
+$text-color: #1B1B1B
+
+.proposals_list
+    display: flex
+    flex-direction: column
+    width: 100%
+    gap: 15px
+
+    .proposal_item
+        background-color: $card-color
+        box-shadow: 0px 1px 8px rgba(0, 0, 0, 0.25)
+        padding: 15px
+        border-radius: 5px
+        display: flex
+        flex-direction: column
+        gap: 15px
+
+        .parameter
+            display: flex
+            gap: 10px
+            font-size: 15px
+
+            .parameter_name
+                font-weight: 500
+
+@media (max-width: 1200px)
+    .proposals_list
+        .proposal_item
+            .parameter
+                font-size: 14px
+
+@media (max-width: 600px)
+    .proposals_list
+        .proposal_item
+            .parameter
+                font-size: 12px

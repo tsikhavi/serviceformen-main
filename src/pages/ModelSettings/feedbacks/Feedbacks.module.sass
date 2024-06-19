@@ -1,0 +1,33 @@
+$card-color: #FFFFFF
+$background-color: #E1E2E7
+$action-color: #98042D
+$text-color: #1B1B1B
+
+.feedbacks_list
+    display: flex
+    flex-direction: column
+    width: 100%
+    gap: 15px
+
+    .add_feedback
+        align-self: end
+
+    .feedback_form
+        width: 100%
+
+        textarea
+            width: calc(100% - 20px)
+
+        .buttons
+            margin-top: 15px
+            display: flex
+            justify-content: space-around
+            width: 100%
+
+            .cancel
+                background-color: $card-color
+                border: 1px solid $action-color
+                color: $text-color
+
+                &:hover
+                    background-color: $background-color
